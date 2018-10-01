@@ -1,11 +1,14 @@
-var express = require('express');
-var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  var foo = null;
-  console.log (foo.toString());
+function get(req, res, next) {
   //res.send('respond with a resource');
-});
+  crashApp ();
+};
 
-module.exports = router;
+function crashApp () {
+  var foo = null;
+  setTimeout(function () {
+    var fooString = foo.toString();
+  }, 100)
+}
+
+exports.get = get;
